@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reCAPTCHA v3 Example</title>
+    <!-- Load the reCAPTCHA JavaScript API with your sitekey -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<h1>reCAPTCHA v3 Example</h1>
+
+<!-- Add your form or action that you want to protect with reCAPTCHA -->
+<form action="?" method="POST">
+    <!-- Add the reCAPTCHA widget with appropriate data attributes -->
+    <div class="g-recaptcha"
+         data-sitekey="6LectPsnAAAAAKYZJ0JBXjO_sKHzJ7ohPdvr6rPJ"
+         data-callback="captchaCallback"></div>
+</form>
+
+<script>
+    function captchaCallback(response) {
+        if(typeof Captcha!== 'undefined'){
+            Captcha.postMessage(response);
+        }
+    }
+</script>
+
+</body>
+</html>
